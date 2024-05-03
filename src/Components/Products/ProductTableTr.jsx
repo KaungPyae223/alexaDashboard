@@ -1,7 +1,8 @@
 import React from "react";
 import UpComponent from "../Charts/UpComponent";
+import DownComponent from "../Charts/DownComponent";
 
-const ProductTableTr = () => {
+const ProductTableTr = ({src,itemName,brand,price,qty,Rate,Increase,ReleaseDate}) => {
   return (
     <tr>
       <td>
@@ -9,24 +10,24 @@ const ProductTableTr = () => {
           <div className="avatar">
             <div className="mask mask-squircle w-12 h-12">
               <img
-                src="https://images.unsplash.com/photo-1606041011872-596597976b25?q=80&w=1889&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                src={src}
                 alt="Avatar Tailwind CSS Component"
               />
             </div>
           </div>
           <div>
-            <div className="font-bold">iPhone 14 Pro Max</div>
-            <div className="text-sm opacity-50">Apple</div>
+            <div className="font-bold">{itemName}</div>
+            <div className="text-sm opacity-50">{brand}</div>
           </div>
         </div>
       </td>
-      <td>16500$</td>
-      <td>1323</td>
+      <td>{price}$</td>
+      <td>{qty}</td>
       <td>
-        12%
-        <UpComponent percent={5}/>
+        {Rate}%
+        {Increase>0? <UpComponent percent={Increase}/> : <DownComponent percent={Increase*-1}/> }  
       </td>
-      <td>17 January 2024</td>
+      <td>{ReleaseDate}</td>
       <th>
         <button className="btn btn-ghost btn-xs">
           <svg

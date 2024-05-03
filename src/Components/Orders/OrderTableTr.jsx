@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const OrderTableTr = ({ DelieveryStatus }) => {
+const OrderTableTr = ({ src,itemName,brand,DelieveryStatus,name,location,orderdate }) => {
   const [status, setstatus] = useState(null);
 
   useEffect(() => {
@@ -59,25 +59,25 @@ const OrderTableTr = ({ DelieveryStatus }) => {
 
   return (
     <tr>
-      <td className="font-bold">U Thu Ra Min</td>
+      <td className="font-bold">{name}</td>
       <td>
-        <div className="flex items-center gap-3">
+      <div className="flex items-center gap-3">
           <div className="avatar">
             <div className="mask mask-squircle w-12 h-12">
               <img
-                src="https://images.unsplash.com/photo-1606041011872-596597976b25?q=80&w=1889&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                src={src}
                 alt="Avatar Tailwind CSS Component"
               />
             </div>
           </div>
           <div>
-            <div className="font-bold">iPhone 14 Pro Max</div>
-            <div className="text-sm opacity-50">Apple</div>
+            <div className="font-bold">{itemName}</div>
+            <div className="text-sm opacity-50">{brand}</div>
           </div>
         </div>
       </td>
-      <td>No.28 Ahlone Road, Yangon Myanmar</td>
-      <td>17 January 2024</td>
+      <td>{location}</td>
+      <td>{orderdate}</td>
       <th>{status}</th>
     </tr>
   );
