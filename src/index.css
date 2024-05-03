@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.no-scrollbar {
+    overflow-y: auto; /* Enable scrolling functionality */
+    scrollbar-width: none; /* Hide scrollbar in Firefox and Safari */
+    ::-webkit-scrollbar { /* Hide scrollbar in Chrome and Edge */
+      display: none;
+    }
+  }
+.BoxShadow {
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+.active {
+  @apply bg-black text-white
+}
+.ComponentShadow{
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.Link:not(.active){
+  @apply active:bg-black active:text-white mb-1.5 hover:bg-gray-300 hover:text-black
+}
+
